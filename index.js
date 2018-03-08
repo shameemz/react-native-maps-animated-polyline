@@ -1,8 +1,7 @@
-import React from "react";
+import React, { Component } from "react";
 import MapView from "react-native-maps";
-import PropTypes from "prop-types";
 
-export default class AnimatedPolyline extends React.Component {
+export default class AnimatedPolyline extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -11,11 +10,11 @@ export default class AnimatedPolyline extends React.Component {
     };
   }
   componentDidMount() {
-    this._animate(this.props.newCoords);
+    this._animate(this.props.coordinates);
   }
   componentWillReceiveProps(nextProps) {
-    if (nextProps.newCoords.length !== this.props.newCoords.length) {
-      this._animate(nextProps.newCoords);
+    if (nextProps.coordinates !== this.props.coordinates) {
+      this._animate(nextProps.coordinates);
     }
   }
   shouldComponentUpdate(nextProps, nextState) {
@@ -48,14 +47,9 @@ export default class AnimatedPolyline extends React.Component {
   render() {
     return (
       <MapView.Polyline
+        {...this.props}
         coordinates={[...this.state.coords]}
-        strokeWidth={4}
-        lineCap="round"
       />
     );
   }
 }
-
-AnimatedPolyline.propTypes = {
-  newCoords: PropTypes.arrayOf(PropTypes.object).isRequired
-};
