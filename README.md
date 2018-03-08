@@ -3,7 +3,7 @@
 
 Javascript animated polyline for react native maps
 
-## Options
+## props
 - interval: 10 (default) milliseconds
 - Same as react-native-maps polyline props [polyline-doc-url]
 
