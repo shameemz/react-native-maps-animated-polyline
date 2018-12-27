@@ -1,13 +1,13 @@
 {
   "name": "react-native-maps-animated-polyline",
-  "version": "1.0.3",
+  "version": "1.0.6",
   "description": "Javascript animated polyine for react-native-maps",
   "main": "index.js",
   "repository": "https://github.com/shameemz/react-native-maps-animated-polyline.git",
   "author": "Shameem",
   "license": "MIT",
-  "dependencies": {
-    "react": "^16.2.0",
-    "react-native-maps": "^0.20.1"
+  "peerDependencies": {
+    "react": "^16.5.0",
+    "react-native-maps": "^0.22.1"
   }
 }
